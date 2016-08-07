@@ -1,0 +1,35 @@
+USE [B2BSolution]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SPR_EQUIPES_INSERIR]    Script Date: 07/08/2016 10:48:05 ******/
+DROP PROCEDURE [dbo].[SPR_EQUIPES_INSERIR]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SPR_EQUIPES_INSERIR]    Script Date: 07/08/2016 10:48:05 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROC [dbo].[SPR_EQUIPES_INSERIR]
+(
+	@ID_VENDEDOR	INT,
+	@ID_CANAL		INT
+)
+AS
+BEGIN
+
+	INSERT INTO TB_EQUIPES
+	(ID_VENDEDOR, ID_CANAL)
+	VALUES
+	(@ID_VENDEDOR, @ID_CANAL)
+	
+	SELECT @@IDENTITY	 
+
+END
+
+GO
+
+
